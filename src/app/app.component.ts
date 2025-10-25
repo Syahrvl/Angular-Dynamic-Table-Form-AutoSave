@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
     });
   } 
 
-  get formStaffDeductionArr() {
+  get rows(): FormArray {
     return this.StaffForm.get('Rows') as FormArray;
   }
 
@@ -83,7 +83,7 @@ export class AppComponent implements OnInit {
     }
     
     this.showTable = true;
-    this.formStaffDeductionArr.push(this.initStaffDeductionRows());
+    this.rows.push(this.initStaffDeductionRows());
   }
 
   getStaffDeduction() {
@@ -119,7 +119,7 @@ export class AppComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.formStaffDeductionArr.removeAt(index);
+        this.rows.removeAt(index);
         this.setIndex -= 1;
 
         //-----------------------------------------------------------------------------------------------------------------//

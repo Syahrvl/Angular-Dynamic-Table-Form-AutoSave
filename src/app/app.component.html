@@ -13,7 +13,7 @@
         <th class="text-position">Action</th>
       </thead>
       <tbody formArrayName="Rows">
-        <tr *ngFor="let row of StaffForm.controls.Rows.controls; let i = index;" [formGroupName]="i">
+        <tr *ngFor="let row of rows.controls; let i = index;" [formGroupName]="i">
           <td class="col-form-label" style="text-align: center; width: 1%;">{{ i + 1 }}</td>
 
           <td style="width: 50%;text-align: center;">
