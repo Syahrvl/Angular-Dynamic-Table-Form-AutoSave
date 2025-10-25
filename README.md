@@ -1,37 +1,27 @@
-# Angular Dynamic Table Form AutoSave
+# DynamicForm
 
-This project demonstrates a **dynamic table form** built using **Angular** and **Reactive Forms**.  
-It allows users to **add, edit, and delete rows dynamically**, with built-in **form validation** and **auto-save** capabilities to persist data seamlessly.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
----
+## Development server
 
-## 🚀 Features
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-- 🧱 **Dynamic Table Rows** — Add or remove rows on the fly.
-- 💾 **Auto-Save Functionality** — Automatically saves data as the user types or modifies fields.
-- ✅ **Reactive Form Validation** — Real-time validation on each field.
-- 🧠 **Material Design Integration** — Clean and modern UI using Angular Material components.
-- 🔍 **Smart Control Handling** — Input fields (like date pickers and toggles) bind dynamically within each row.
-- 🧹 **Conditional Actions** — Delete icon hidden for single-row tables and visible only when multiple rows exist.
+## Code scaffolding
 
----
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## 🛠️ Tech Stack
+## Build
 
-- **Angular** — Framework for building dynamic web apps  
-- **Angular Material** — UI component library  
-- **Reactive Forms** — For structured form management  
-- **TypeScript** — For type-safe logic and maintainability  
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
----
+## Running unit tests
 
-## 🧩 Example Use Cases
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-- Employee deduction or allowance management forms  
-- Dynamic invoice or order line items  
-- Configurable data entry tables with auto-save  
+## Running end-to-end tests
 
----
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## 📂 Project Structure
+## Further help
 
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

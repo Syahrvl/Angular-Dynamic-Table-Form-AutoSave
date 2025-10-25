@@ -1,0 +1,15 @@
+/* Apply font globally to the entire app */
+html, body {
+  font: 500 20px / 32px Roboto, "Helvetica Neue", sans-serif;
+//   margin: 0;
+//   padding: 0;
+//   height: 100%;
+}
+
+/* Make sure all Angular Material and form elements inherit this font */
+*, *::before, *::after {
+  font-family: Roboto, "Helvetica Neue", sans-serif !important;
+//   font-weight: 500 !important;
+//   font-size: 20px !important;
+//   line-height: 32px !important;
+}/* You can add global styles to this file, and also import other style files */

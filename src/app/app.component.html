@@ -1,0 +1,64 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h3>Dynamic Table Form with Auto-Save Feature</h3>
+</div>
+<div class="col-sm-12">
+  <form [formGroup]="StaffForm" >
+    <table border="1" style="width: 100%;">
+      <thead style="background: rgb(230, 245, 253) !important; text-align: center;">
+        <th class="text-position">No</th>
+        <th class="text-position">Staff Name</th>
+        <th class="text-position">Effective Date</th>
+        <th class="text-position">Status</th>
+        <th class="text-position">Action</th>
+      </thead>
+      <tbody formArrayName="Rows">
+        <tr *ngFor="let row of StaffForm.controls.Rows.controls; let i = index;" [formGroupName]="i">
+          <td class="col-form-label" style="text-align: center; width: 1%;">{{ i + 1 }}</td>
+
+          <td style="width: 50%;text-align: center;">
+            <div class="input-container">
+              <input type="text" autocomplete="off" id="staffName" formControlName="TenantStaffName" style="width: 100%;" required>
+              <label for="staffName" class="label">Staff Name</label>
+              <div class="underline"></div>
+            </div>
+          </td>
+
+          <td style="width: 20%;">
+            <div class="input-container">
+              <input type="text" [matDatepicker]="picker" autocomplete="off" id="effectiveDate" formControlName="EffectiveDate" style="width: 90%;" required>
+              <label for="effectiveDate" class="label">Effective Date</label>
+              <div class="underline" style="width: 90%; bottom: 3px;"></div>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </div>
+          </td>
+
+          <td width="5%" style="text-align: center;">
+            <mat-slide-toggle formControlName="Status">Active</mat-slide-toggle>
+          </td>
+
+          <td width="10%" style="text-align: center;">
+            <mat-icon color="warn" style="cursor: pointer; vertical-align: middle; margin-right: 15px;" 
+              (click)="deleteRow(i,row)" *ngIf="StaffForm.controls.Rows.controls.length > 1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"/>
+              </svg>
+            </mat-icon>
+              
+            <mat-icon style="cursor: pointer; vertical-align: middle; border: 2px; color: #4abb7b;"
+              [class.disable]="!isRowValid(row)"
+              *ngIf="i == StaffForm.controls.Rows.controls.length - 1" (click)="addNewRow()">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
+              </svg>
+            </mat-icon>
+            
+          </td> 
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
+
+<router-outlet></router-outlet>
